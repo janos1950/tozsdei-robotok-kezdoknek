@@ -1,167 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tőzsdei robotok kezdőknek — eBook</title>
-  <meta name="description" content="Tanuld meg 1 nap alatt, hogyan működnek a tőzsdei kriptobotok. Gyakorlati, kezdőbarát útmutató + ajándék bónuszok." />
+  <meta charset="UTF-8">
+  <title>Tőzsdei robotok kezdőknek – Automatizált kereskedés e-book</title>
+
+  <meta name="description" content="Tanuld meg a tőzsdei és kripto robotok használatát lépésről lépésre. Kezdőknek szóló e-book automata kereskedésről, passzív jövedelem lehetőségekkel.">
+  <meta name="keywords" content="tőzsdei robotok kezdőknek, kriptobot ebook, automata kereskedés, passzív jövedelem, kereskedő robot">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    :root{
-      --bg:#0b0b0b;                  /* fekete */
-      --gold:#D4AF37;                /* arany */
-      --muted:#f3f3f3;
-      --accent:#b8860b;
-      --container:1200px;
-      font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0b0b0b;
+      color: #f5f5f5;
+      text-align: center;
     }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--container);margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo .mark{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--accent));display:flex;align-items:center;justify-content:center;color:#0b0b0b;font-weight:700;font-size:18px}
-    h1{font-size:30px;margin:0;color:var(--gold)}
-    p.lead{color:#ddd;margin:10px 0 22px;font-size:16px;line-height:1.5}
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;padding:24px 0}
-    .card{background:#0f0f0f;padding:22px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.6);border:1px solid rgba(212,175,55,0.06)}
-    .price{font-size:28px;color:var(--gold);font-weight:700;margin:0}
-    .buy-btn{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--accent));color:#0b0b0b;padding:14px 20px;border-radius:10px;font-weight:700;text-decoration:none}
-    .small{font-size:13px;color:#bbb}
-    ul.benefits{list-style:none;padding:0;margin:12px 0 0}
-    ul.benefits li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.04);font-size:14px}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-    .feature{background:linear-gradient(180deg,rgba(212,175,55,0.04),transparent);padding:14px;border-radius:10px;border:1px solid rgba(212,175,55,0.04)}
-    footer{padding:32px 0;color:#aaa;font-size:14px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .faq dt{font-weight:700;color:#fff;margin:16px 0 6px}
-    .cta-row{display:flex;gap:12px;align-items:center;margin-top:14px}
-    a.link{color:var(--gold);text-decoration:none}
-    @media (max-width:860px){
-      .hero{grid-template-columns:1fr; }
-      .features{grid-template-columns:1fr}
-      .grid2{grid-template-columns:1fr}
-      .logo .mark{width:46px;height:46px}
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      color: #d4af37;
+    }
+
+    img.cover {
+      max-width: 320px;
+      width: 100%;
+      margin: 30px auto;
+      box-shadow: 0 0 25px rgba(212,175,55,0.4);
+      border-radius: 6px;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #d4af37, #b8962e);
+      color: #000;
+      padding: 18px 28px;
+      margin: 25px auto;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .box {
+      background-color: #151515;
+      padding: 25px;
+      margin-top: 35px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #aaa;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <div class="mark">TR</div>
-        <div>
-          <div style="font-size:13px;color:#ddd">E-book</div>
-          <div style="font-weight:700;color:var(--muted)">Tőzsdei robotok kezdőknek</div>
-        </div>
-      </div>
-      <div style="text-align:right">
-        <div style="color:#888;font-size:13px">Ár</div>
-        <div class="price">19 €</div>
-      </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <h1>Tudj meg mindent a kripto-robotokról — érthetően, kezdőknek</h1>
-          <p class="lead">Ebben a rövid, gyakorlatorientált e-bookban megtanítom, hogyan működnek a tőzsdei robotok, melyik botot válaszd, és hogyan kezeld a kockázatot. Gyors, biztonságos, gyakorlati tudás — kezdőknek tervezve.</p>
+<div class="container">
 
-          <div class="card">
-            <strong class="small">Mit kapsz:</strong>
-            <ul class="benefits">
-              <li>Teljes e-book — gyakorlati példákkal</li>
-              <li>3 kezdőbarát botstratégia (DCA, Grid, Trend)</li>
-              <li>Ajándék MyProfit 30$ link és Bybit EU regisztráció</li>
-              <li>Lépésről lépésre útmutató a beállításhoz</li>
-            </ul>
+  <h1>Tőzsdei robotok kezdőknek</h1>
+  <h2>Automata kereskedés lépésről lépésre</h2>
 
-            <div class="cta-row">
-              <!-- FORM LINK: cseréld, ha más a végleges -->
-              <a class="buy-btn" href="https://docs.google.com/forms/d/19lz6eXjYzvWeV3hJ_Yxth0dTzWNwx6h2VwXBD5DuVgM/viewform" target="_blank">Megrendelem — 19 €</a>
-              <div style="font-size:13px;color:#bbb">Biztonságos fizetés – e-mail visszaigazolás</div>
-            </div>
+  <img src="cover.jpg" alt="Tőzsdei robotok kezdőknek könyvborító" class="cover">
 
-            <div style="margin-top:12px" class="small">Ajándék: <a class="link" href="https://my-profit.pro/register/?ref=janos1" target="_blank">MyProfit 30$ bónusz</a> · <a class="link" href="https://partner.bybit.eu/b/146912" target="_blank">Bybit EU regisztráció</a></div>
-          </div>
+  <p>
+    Ez az e-book segít megérteni, hogyan működnek a tőzsdei és kripto kereskedő robotok,
+    milyen kockázatokkal járnak, és hogyan használhatod őket kezdőként is biztonságosan.
+  </p>
 
-          <div class="features" style="margin-top:18px">
-            <div class="feature">
-              <strong>Gyors tanulás</strong>
-              <div class="small">1 nap alatt érthető, kezdőbarát magyarázatok.</div>
-            </div>
-            <div class="feature">
-              <strong>Biztonság</strong>
-              <div class="small">Jelszóval védett e-book, egyedi letöltés.</div>
-            </div>
-            <div class="feature">
-              <strong>Gyakorlatias</strong>
-              <div class="small">Lépésről lépésre beállítási útmutatók.</div>
-            </div>
-          </div>
+  <a class="cta" href="https://drive.google.com/file/d/1r2SrY6ozlWbY2eeOfkVnaIBKzCGuDQuL/view">
+    📘 E-book letöltése
+  </a>
 
-        </div>
+  <p><strong>Megnyitási jelszó:</strong> tőzsde2025</p>
 
-        <aside>
-          <div class="card" style="text-align:center">
-            <div style="font-size:13px;color:#bbb">E-book különlegesség</div>
-            <h2 style="margin:8px 0;color:var(--gold)">Tőzsdei robotok kezdőknek</h2>
-            <p class="small">Ár: <strong style="color:var(--gold)">19 €</strong></p>
-            <p class="small">Kapod: PDF + ajándék linkek + e-mail támogatás</p>
-            <a class="buy-btn" href="https://docs.google.com/forms/d/19lz6eXjYzvWeV3hJ_Yxth0dTzWNwx6h2VwXBD5DuVgM/viewform" target="_blank">Megrendelem — 19 €</a>
-            <div style="margin-top:10px;color:#999;font-size:13px">Küldjük e-mailben a jelszót és a letöltési linket.</div>
-          </div>
-        </aside>
-      </section>
+  <div class="box">
+    <h2>🎁 30 USD MyProfit bónusz</h2>
+    <p>
+      Regisztrálj a MyProfit rendszerbe, és aktiváld a 30 dolláros ajándék bónuszt,
+      amellyel akár az e-book árát is visszakeresheted automata kereskedéssel.
+    </p>
+    <a class="cta" href="https://my-profit.pro/register/?ref=janos1">
+      MyProfit bónusz aktiválása
+    </a>
+  </div>
 
-      <section style="margin-top:22px" class="card">
-        <h3 style="color:var(--gold)">Miért ez a könyv?</h3>
-        <p class="small">Ez a könyv nem ígér gyors meggazdagodást — gyakorlati, megvalósítható lépéseket tanítok, amelyekkel kevesebb kockázattal kezdhetsz botokkal kereskedni.</p>
+  <div class="box">
+    <h2>💹 Bybit – haladó lehetőség</h2>
+    <p>
+      A Bybit az egyik legismertebb kriptotőzsde, ahol robotokkal és bónuszokkal is
+      növelheted a kereskedési lehetőségeidet.
+    </p>
+    <a class="cta" href="https://partner.bybit.eu/b/146912">
+      Bybit regisztráció
+    </a>
+  </div>
 
-        <div class="grid2" style="margin-top:12px">
-          <div>
-            <h4>Mit tanulhatsz meg</h4>
-            <ul style="color:#ddd">
-              <li>Hogyan működik egy robot (stratégia, paraméterek, végrehajtó modul)</li>
-              <li>Grid, DCA, Trend — mikor melyik működik</li>
-              <li>Platformválasztás: Bybit, Pionex, Zignaly és társai</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Mit tartalmaz a csomag</h4>
-            <ul style="color:#ddd">
-              <li>Letölthető PDF</li>
-              <li>Ajándék MyProfit 30$ link</li>
-              <li>Bybit EU regisztrációs link</li>
-              <li>E-mailes támogatás kérdés esetén</li>
-            </ul>
-          </div>
-        </div>
+  <footer>
+    © 2025 – Minden jog fenntartva
+  </footer>
 
-      </section>
+</div>
 
-      <section class="card" style="margin-top:18px">
-        <h3 style="color:var(--gold)">GYIK</h3>
-        <div class="faq">
-          <dt>Hogyan kapom meg az e-bookot?</dt>
-          <dd>A megrendelés után automatikus e-mailt küld a rendszer, benne a jelszóval védett PDF letöltési linkkel.</dd>
-
-          <dt>Mi van az ajándékcsomagban?</dt>
-          <dd>MyProfit 30$ regisztrációs link és Bybit EU referál link (mindkettő a kártyán található).</dd>
-
-          <dt>Biztonságos a fizetés?</dt>
-          <dd>A fizetés a te választott módszered szerint történik; a Google űrlapon küldöd a tranzakció részleteit, mi pedig visszaigazoljuk e-mailben.</dd>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div>© <strong>Tőzsdei robotok kezdőknek</strong> — Minden jog fenntartva.</div>
-        <div style="text-align:right">
-          Kapcsolat: <a class="link" href="mailto:janos1950@gmail.com">janos1950@gmail.com</a>
-        </div>
-      </div>
-    </footer>
-  </div> 
 </body>
-</html> 
+</html>
